@@ -1,0 +1,125 @@
+/* general */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: 
+  linear-gradient(to bottom,
+  #249688 0px,
+  #249688 15vh,
+  #D9DBD5 15vh,
+  #D9DBD5 100vh
+  )
+}
+
+ul{
+  list-style: none;
+}
+
+/* stard */
+.container{
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+  background-color: white;
+}
+
+.container .left,.right{
+  height: 100%;
+  float: left;
+}
+
+
+/* parte sinistra */
+.container .left{
+  width: 35%;
+  background-color: #fafafae7;
+}
+
+/* header */
+
+.container .left header
+.user,
+.notifiche{
+  width: 100%;
+  height: 70px;
+}
+
+.container .left header .user{
+  background-color: #EAEAEA;
+}
+
+.container .left header .notifiche{
+  background-color: #8EDAFC;
+}
+
+/* section */
+.container .left section{
+  width: 100%;
+  height: calc(100% - 140px);
+}
+
+.container .left section .search{
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.container .left section .contacts{
+  height: calc(100% - 60px);
+  background-color: white;
+  margin-right: 15px;
+  overflow: auto;
+}
+
+.container .left section .contacts ul li {
+  width: 100%;
+  height: 75px;
+  padding: 10px 20px;
+  position: relative;
+  border-bottom: solid 2px #fafafae7 ;
+  
+}
+
+.container .left section .contacts ul li .contact-name{
+  position: absolute;
+  top: 10px;
+  margin-left: 18px; 
+  font-weight: bold;
+}
+
+.container .left section .contacts ul img{
+  height: 100%;
+  border-radius: 50px;
+}
+
+
+
+
+/* parte destra */
+.container .right{
+  width: 65%;
+
+}
+
+.right 
+section,footer{
+  width: 100%;
+  height: 70px;
+  background-color: #EAEAEA;
+  border-left: solid 2px lightgray;
+}
+
+.right main{
+  height: calc(100% - 140px);
+  margin-right: 10px;
+  background-image: url(../img/mine.jpg);
+}
