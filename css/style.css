@@ -16,7 +16,9 @@ body{
   #249688 15vh,
   #D9DBD5 15vh,
   #D9DBD5 100vh
-  )
+  );
+
+  font-family: 'Lato', sans-serif;
 }
 
 ul{
@@ -44,7 +46,6 @@ ul{
 }
 
 /* header */
-
 .container .left header
 .user,
 .notifiche{
@@ -54,10 +55,60 @@ ul{
 
 .container .left header .user{
   background-color: #EAEAEA;
+  display: flex;
 }
 
+.container .left header .user .profilo{
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.container .left header .user .profilo img{
+  height: 100%;
+  border-radius: 50px;
+}
+
+.container .left header .user .icons-interaction{
+  height: 100%;
+  width: 100%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #B1B1B1;
+}
+
+.container .left header .user .icons-interaction i{
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+
 .container .left header .notifiche{
+  padding: 10px;
   background-color: #8EDAFC;
+  font-size: 15px;
+}
+
+.container .left header .notifiche i{
+  font-size: 20px;
+  color: #8EDAFC ;
+  background-color: #F2FBFF;
+  padding: 15px;
+  margin: 0px 15px 0px 10px;
+  border-radius: 90px;
+  float: left;
+}
+
+.container .left header .notifiche ul{
+  min-width: 400px;
+  height: 100%;
+  padding: 5px 10px;
+  
 }
 
 /* section */
@@ -71,6 +122,17 @@ ul{
   margin: 10px;
   padding: 10px;
   background-color: white;
+}
+
+.container .left section .search .fa-search{
+  margin: 0px 10px;
+}
+
+.container .left section .search input{
+  border: none;
+  outline: none;
+  width: 80%;
+  height: 20px;
 }
 
 .container .left section .contacts{
@@ -102,24 +164,73 @@ ul{
 }
 
 
-
-
 /* parte destra */
 .container .right{
   width: 65%;
-
 }
 
 .right 
 section,footer{
   width: 100%;
   height: 70px;
+  padding: 10px;
   background-color: #EAEAEA;
   border-left: solid 2px lightgray;
+  display: flex;
+  align-items: center;
+}
+
+
+.right section{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right section .friend{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.right section .friend img{
+  height: 100%;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.right section .send-friend{
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right section .send-friend i{
+  font-size: 20px;
+  color:#B1B1B1 ;
+  padding: 0px 10px;
 }
 
 .right main{
   height: calc(100% - 140px);
   margin-right: 10px;
   background-image: url(../img/mine.jpg);
+  padding: ;
+}
+
+.right footer input{
+width: 100%;
+height: 85%;
+padding: 10px 15px;
+margin: 10px;
+border: none;
+outline: none;
+border-radius: 5px;
+}
+
+.right footer i{
+font-size: 24px;
+padding: 15px;
+color: #6C7375;
 }
