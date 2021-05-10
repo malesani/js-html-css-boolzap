@@ -48,7 +48,10 @@
 
         <div class="contacts">
           <ul>
-            <li v-for="contact in contacts">
+            <li v-for="(contact, index) in contacts"
+                @click="clickChat"
+                :class="chatActive"
+                >
               <img :src="'img/avatar'+ contact.avatar +'.jpg'" alt="">
               <span class="contact-name">{{contact.name}}</span>
             </li>
@@ -61,7 +64,7 @@
     <main class="right">
       <section>
         <div class="friend">
-          <img src="/img/avatar_3.jpg" alt="">
+          <img src="img/avatar_3.jpg" alt="">
           <ul>
             <li>Michele</li>
             <li style="color: #507485;">Ultimo acceso oggi alle</li>
@@ -75,7 +78,16 @@
       </section>
 
       <main>
-        
+        <div v-for="(messagio,index) in contacts[counter].messages" class="chat">
+          <ul v-if="messagio.status === 'sent'" class="send">
+            {{messagio.text}}
+          </ul>
+
+          <ul v-if="messagio.status === 'received'" class="risposta">
+            {{messagio.text}}
+            <i class="fas fa-chevron-down"></i>
+          </ul>
+        </div>
       </main>
 
       <footer>
@@ -86,6 +98,6 @@
     </main>
 
   </div>
-  <script src="/script/javascript.js"></script>
+  <script src="script/javascript.js"></script>
 </body>
 </html>

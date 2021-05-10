@@ -216,7 +216,48 @@ section,footer{
   height: calc(100% - 140px);
   margin-right: 10px;
   background-image: url(../img/mine.jpg);
-  padding: ;
+  padding: 50px;
+  overflow: auto;
+}
+
+.right main .risposta ul li,
+.send ul li{
+  margin-bottom: 10px;
+}
+
+.right main .risposta{
+  width: 290px;
+  max-width: 300px;
+  min-height: 50px;
+  padding: 10px;
+  float: left;
+  clear: both;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.right main .send{
+  width: 290px;
+  max-width: 300px;
+  min-height: 50px;
+  padding: 10px;
+  float: right;
+  clear: both;
+  border-radius: 5px;
+  background-color: #D5F9BB;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.right main .risposta i{
+  position: absolute;
+  right: 13px;
+  color: #D9DBD5;
 }
 
 .right footer input{
@@ -233,4 +274,8 @@ border-radius: 5px;
 font-size: 24px;
 padding: 15px;
 color: #6C7375;
+}
+
+.chat-active{
+  background-color: #F4F5F5;
 }

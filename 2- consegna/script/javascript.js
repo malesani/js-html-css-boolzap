@@ -1,7 +1,9 @@
 var app = new Vue({
   el: '#app',
   data: {
-
+    
+    chatActive : "",
+    counter : 0, 
     contacts: [
       {
         name: 'Michele',
@@ -25,6 +27,7 @@ var app = new Vue({
           }
         ],
       },
+      
       {
         name: 'Fabio',
         avatar: '_2',
@@ -90,7 +93,9 @@ var app = new Vue({
   },
 
   methods: {
-    
-    
+   clickChat() {
+    this.chatActive = "chat-active";
+    console.log("click")
+   }
   }
 })
