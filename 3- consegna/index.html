@@ -64,9 +64,9 @@
     <main class="right">
       <section>
         <div class="friend">
-          <img src="img/avatar_3.jpg" alt="">
+          <img :src="'img/avatar'+contacts[counter].avatar+'.jpg'" alt="">
           <ul>
-            <li>Michele</li>
+            <li>{{contacts[counter].name}}</li>
             <li style="color: #507485;">Ultimo acceso oggi alle</li>
           </ul>
         </div>
@@ -93,7 +93,11 @@
 
       <footer>
         <i class="far fa-smile"></i>
-        <input type="text" placeholder="Scrivi un messagio">
+        <input type="text" 
+                v-model="miMensaje"
+                  placeholder="Scrivi un messagio"
+                    @keyup.enter="pushText"
+        >
         <i class="fas fa-microphone"></i>
       </footer>
     </main>

@@ -1,8 +1,9 @@
 var app = new Vue({
   el: '#app',
   data: {
-  
     counter : 0, 
+    miMensaje : "",
+    respuesta:"ma si lascia stare",
     contacts: [
       {
         name: 'Michele',
@@ -23,7 +24,7 @@ var app = new Vue({
             date: '10/01/2020 16:15:22',
             text: 'Tutto fatto!',
             status: 'received'
-          }
+          },
         ],
       },
       
@@ -46,7 +47,7 @@ var app = new Vue({
             date: '20/03/2020 16:35:00',
             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
             status: 'sent'
-          }
+          },
         ],
       },
       {
@@ -68,7 +69,7 @@ var app = new Vue({
             date: '28/03/2020 16:15:22',
             text: 'Ah scusa!',
             status: 'received'
-          }
+          },
         ],
       },
       {
@@ -85,22 +86,56 @@ var app = new Vue({
             date: '10/01/2020 15:50:00',
             text: 'Si, ma preferirei andare al cinema',
             status: 'received'
-          }
+          },
         ],
       },
     ]
   },
-
+  
   methods: {
    clickChat(index) {
     this.counter = index
     console.log(index)
    },
-
+   
    checkClass(index) {
     if(index === this.counter){
       return "chat-active"
     }
-   }
+   },
+
+  
+   pushText(){
+      this.contacts[this.counter].messages.push({
+        date : "11-05-2021",
+        text : this.miMensaje,
+        status :"sent"
+      })
+      this.miMensaje=""
+
+      setTimeout(()=>{
+        this.contacts[this.counter].messages.push({
+          date :"11-05-2021",
+          text : this.respuesta,
+          status : "received"
+        })
+      },1000);
+      
+      
+      
+
+    },
+
+   
+     
+   
+   
+   
+   
+    
+    
+    
+
+  
   }
 })
