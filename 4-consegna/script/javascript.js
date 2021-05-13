@@ -107,18 +107,23 @@ var app = new Vue({
   
    pushText(){
       this.contacts[this.counter].messages.push({
-        date : "11-05-2021",
+        date : dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text : this.miMensaje,
         status :"sent"
       })
       this.miMensaje=""
       setTimeout(()=>{
         this.contacts[this.counter].messages.push({
-          date :"11-05-2021",
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text : this.respuesta,
           status : "received"
         })
       },1000);
     },
+
+   lastAcces(){
+     let contactMsn = this.contacts[this.counter].messages;
+     return contactMsn[contactMsn.length-1].date;
+   }
   }
 })

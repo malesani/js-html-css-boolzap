@@ -53,7 +53,7 @@
             <li v-for="(contact, index) in contacts"
                 @click="clickChat(index)"
                   :class="checkClass(index)"
-                    v-if="contact.name.includes(searchName.toUpperCase()) ? contact.visible === true : false"
+                    v-if="contact.name.toLowerCase().includes(searchName.toLowerCase()) ? contact.visible === true : false"
                 >
               <img :src="'img/avatar'+ contact.avatar +'.jpg'" alt="">
               <span class="contact-name">{{contact.name}}</span>
@@ -70,7 +70,7 @@
           <img :src="'img/avatar'+contacts[counter].avatar+'.jpg'" alt="">
           <ul>
             <li>{{contacts[counter].name}}</li>
-            <li style="color: #507485;">Ultimo acceso oggi alle</li>
+            <li style="color: #507485;">Ultimo acceso {{lastAcces()}}</li>
           </ul>
         </div>
         <div class="send-friend">
@@ -83,13 +83,17 @@
       <main>
         <div v-for="(messagio,index) in contacts[counter].messages"
              class="chat">
-          <ul v-if="messagio.status === 'sent'" class="send">
+          <ul v-if="messagio.status === 'sent'" 
+                class="send">
             {{messagio.text}}
+            <span class="orario-messagio">{{messagio.date}}</span>
           </ul>
 
-          <ul v-if="messagio.status === 'received'" class="risposta">
+          <ul v-if="messagio.status === 'received'" 
+                class="risposta">
             {{messagio.text}}
             <i class="fas fa-chevron-down"></i>
+            <span class="orario-messagio">{{messagio.date}}</span>
           </ul>
         </div>
       </main>
@@ -104,8 +108,9 @@
         <i class="fas fa-microphone"></i>
       </footer>
     </main>
-
   </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.8/dayjs.min.js' integrity='sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==' crossorigin='anonymous'></script>
   <script src="script/javascript.js"></script>
 </body>
 </html>
